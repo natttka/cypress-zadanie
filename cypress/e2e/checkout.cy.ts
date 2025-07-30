@@ -60,4 +60,5 @@ describe('Checkout flow', () => {
     checkoutPage.elements.errorMessage()
       .should('have.text', 'Error: Postal Code is required');
   });
+  
 });

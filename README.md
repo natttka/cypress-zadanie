@@ -49,3 +49,9 @@ npx cypress open
 Run headless in chrome:
 npx cypress run --browser chrome
 
+Run and generate HTML Mochawesome report:
+npm run report
+
+Open report:
+cypress/reports/index.html
+

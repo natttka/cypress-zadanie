@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "report": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports/mocha,overwrite=false,html=false,json=true && mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochawesome.json && marge cypress/reports/mochawesome.json --reportDir cypress/reports --reportFilename index.html"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,9 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.1.0",
     "cypress": "^14.5.3",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0",
     "typescript": "^5.8.3"
   }
 }
