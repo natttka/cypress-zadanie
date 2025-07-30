@@ -1,0 +1,31 @@
+# Node dependencies
+node_modules/
+package-lock.json
+
+# Cypress generated files
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Cypress config cache
+.cypress-cache/
+.cache/
+
+# Mac system files
+.DS_Store
+
+# VSC config
+.vscode/
+
+# Environment files (if used)
+.env
+.env.local
+
+# Reports
+cypress/reports/
+mochawesome-report/
+mochawesome.json
+
+# TypeScript build (if any)
+dist/
+*.tsbuildinfo

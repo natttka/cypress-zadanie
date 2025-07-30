@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@pages/*": ["cypress/pages/*"]
+    },
+    "types": ["cypress", "mocha", "chai"],
+    "moduleResolution": "node",
+    "skipLibCheck": true
+  },
+  "include": ["cypress/**/*.ts"]
+}
