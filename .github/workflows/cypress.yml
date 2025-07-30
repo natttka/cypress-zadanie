@@ -1,10 +1,11 @@
-name: Tests - Cypress
+name: E2E Tests - Cypress
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   cypress-run:
@@ -12,24 +13,35 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: 'lts/*'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Cypress tests
-        run: npx cypress run
+      - name: Install Mochawesome reporter
+        run: npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
 
-      - name: Upload artifacts
+      - name: Run Cypress tests with Mochawesome
+        run: |
+          npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=true,json=true
+
+      - name: Upload Cypress artifacts (screenshots, videos)
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-artifacts
           path: |
             cypress/screenshots
             cypress/videos
+
+      - name: Upload Mochawesome reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-reports
+          path: cypress/reports
