@@ -1,33 +1,10 @@
-[
-  {
-    "username": "standard_user",
-    "password": "secret_sauce",
-    "expected": "success"
+{
+  "standard": {
+    "user": "standard_user",
+    "pass": "secret_sauce"
   },
-  {
-    "username": "locked_out_user",
-    "password": "secret_sauce",
-    "expected": "error",
-    "message": "Epic sadface: Sorry, this user has been locked out."
-  },
-  {
-    "username": "problem_user",
-    "password": "secret_sauce",
-    "expected": "success"
-  },
-  {
-    "username": "performance_glitch_user",
-    "password": "secret_sauce",
-    "expected": "success"
-  },
-  {
-    "username": "error_user",
-    "password": "secret_sauce",
-    "expected": "success"
-  },
-  {
-    "username": "visual_user",
-    "password": "secret_sauce",
-    "expected": "success"
+  "invalid": {
+    "user": "invalid_user",
+    "pass": "invalid_pass"
   }
-]
+}

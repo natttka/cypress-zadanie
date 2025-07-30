@@ -9,7 +9,7 @@
     "paths": {
       "@pages/*": ["cypress/pages/*"]
     },
-    "types": ["cypress", "mocha", "chai"],
+    "types": ["cypress", "mocha", "chai", "node"],
     "moduleResolution": "node",
     "skipLibCheck": true
   },
